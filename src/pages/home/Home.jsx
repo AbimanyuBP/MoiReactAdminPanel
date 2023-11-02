@@ -1,12 +1,12 @@
 import React from 'react';
 import "./home.scss";
-import { Outlet } from 'react-router';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 const Home = () => {
   return (
     <div className="home">
-        Home
-        <Outlet/>
+        <Sidebar/>
+        <div className="homecontainer">AAAAAAAAAAAAAAAAAAA</div>
     </div>
   )
 }
