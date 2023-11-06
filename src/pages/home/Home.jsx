@@ -2,7 +2,9 @@ import React from 'react';
 import "./home.scss";
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
-import Widget from '../../components/widget/Widget';
+import Widget from '../../components/widget/widget';
+import Featured from '../../components/featured/Featured';
+import Chart from '../../components/chart/Chart';
 
 const Home = () => {
   return (
@@ -15,6 +17,10 @@ const Home = () => {
             <Widget type="order"/>
             <Widget type="earning"/>
             <Widget type="balance"/>
+          </div>
+          <div className="charts">
+            <Featured/>
+            <Chart/>
           </div>
         </div>
     </div>
