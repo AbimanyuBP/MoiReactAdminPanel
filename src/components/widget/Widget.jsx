@@ -5,7 +5,7 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
-const widget = ({type}) => {
+const Widget = ({type}) => {
 
   let data;
 
@@ -19,7 +19,10 @@ const widget = ({type}) => {
         title: "USERS",
         isMoney: false,
         link: "See all users",
-        icon: <PermIdentityIcon className="icon"/>,
+        icon: <PermIdentityIcon className="icon" style={{
+          color:"crimson",
+          backgroundColor: "rgba(255, 0, 0, 0.2)"
+        }}/>,
       }
       break;
     case "order":
@@ -27,7 +30,10 @@ const widget = ({type}) => {
         title: "ORDERS",
         isMoney: false,
         link: "View all orders",
-        icon: <ShoppingCartOutlinedIcon className="icon"/>,
+        icon: <ShoppingCartOutlinedIcon className="icon" style={{
+          backgroundColor: "rgba(218, 165, 32, 0.2)",
+          color: "goldenrod",
+        }}/>,
       }
       break;
     case "earning":
@@ -35,7 +41,9 @@ const widget = ({type}) => {
         title: "EARNINGS",
         isMoney: true,
         link: "View net earnings",
-        icon: <MonetizationOnOutlinedIcon className="icon"/>,
+        icon: <MonetizationOnOutlinedIcon className="icon" style={{ 
+          backgroundColor: "rgba(0, 128, 0, 0.2)", 
+          color: "green" }}/>,
       }
       break;
     case "balance":
@@ -43,7 +51,10 @@ const widget = ({type}) => {
         title: "BALANCE",
         isMoney: true,
         link: "See details",
-        icon: <AccountBalanceWalletOutlinedIcon className="icon"/>,
+        icon: <AccountBalanceWalletOutlinedIcon className="icon" style={{
+          backgroundColor: "rgba(128, 0, 128, 0.2)",
+          color: "purple",
+        }}/>,
       }
       break;
     default:
@@ -60,12 +71,12 @@ const widget = ({type}) => {
         <div className="right">
             <div className="percentage positive">
                 <KeyboardArrowUpIcon/>
-                20%
+                {diff} %
             </div>
-            <PermIdentityIcon className="icon"/>
+            {data.icon}
         </div>
     </div>
   )
 }
 
-export default widget
+export default Widget
