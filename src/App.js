@@ -9,6 +9,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import { productInputs, userInputs } from "./formSource";
 
 const router = createBrowserRouter(
   // TODO: change it to object based routing in the future K...
@@ -19,13 +20,13 @@ const router = createBrowserRouter(
         <Route path="users">
           <Route index element={<List/>}/>
           <Route path=":userId" element={<Single/>}/>
-          <Route path="new" element={<New/>}/>
+          <Route path="new" element={<New inputs={userInputs} title="Add new User"/>}/>
         </Route>
         {/* This admin template manages products */}
         <Route path="products">
           <Route index element={<List/>}/>
           <Route path=":productId" element={<Single/>}/>
-          <Route path="new" element={<New/>}/>
+          <Route path="new" element={<New inputs={productInputs} title="Add new Product"/>}/>
         </Route>
     </Route>
   )
