@@ -10,30 +10,39 @@ import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstruct
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
+import {Link} from "react-router-dom"
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
         <div className="top">
-            <span className="logo">Mimin Panel</span>
+            <Link to="/" style={{textDecoration: "None"}}>
+                <span className="logo">Mimin Panel</span>
+            </Link>
         </div>
         <hr />
         <div className="center">
             <ul>
                 <p className="title">MAIN</p>
-                <li>
-                    <DashboardIcon className="icon"/>
-                    <span>Dashboard</span>
-                </li>
+                <Link to="/" style={{textDecoration: "None"}}>
+                    <li>
+                        <DashboardIcon className="icon"/>
+                        <span>Dashboard</span>
+                    </li>
+                </Link>
                 <p className="title">LIST</p>
-                <li>
-                    <PeopleIcon className="icon"/>
-                    <span>Users</span>
-                </li>
-                <li>
-                    <StoreIcon className="icon"/>
-                    <span>Products</span>
-                </li>
+                <Link to="/users" style={{textDecoration: "None"}}>
+                    <li>
+                        <PeopleIcon className="icon"/>
+                        <span>Users</span>
+                    </li>
+                </Link>
+                <Link to="/products" style={{textDecoration: "None"}}>
+                    <li>
+                        <StoreIcon className="icon"/>
+                        <span>Products</span>
+                    </li>
+                </Link>
                 <li>
                     <MopedIcon className="icon"/>
                     <span>Deliveries</span>
